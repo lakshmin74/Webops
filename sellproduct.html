@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sell Product</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+        <h2>Sell Your Item</h2>
+
+        <form>
+                <label for="title"><b>Title</b></label><br>
+                <input type="text" id="title" name="title" required/><br><br>
+           
+                <label for="description"><b>Description</b></label><br>
+                <textarea id="description" name="description" rows="4" required></textarea><br><br>
+            
+                <label for="price"><b>Price</b></label><br>
+                <input type="number" id="price" name="price" required><br><br>
+            
+                <label for="buydate"><b>Buying Date</b></label><br>
+                <input type="date" id="buydate" name="buydate" required><br><br>
+           
+                <label for="buyprice"><b>Buying Price</b></label><br>
+                <input type="number" id="buyprice" name="buyprice" required><br><br>
+            
+                <label for="image"><b>Upload Multiple Photos</b></label><br>
+                <input type="file" id="image" name="image[]" multiple="" value=""><br><br>
+                           
+                <label for="sellerdetails"><b>Your Details</b></label><br>
+                <textarea id="sellerdetails" name="sellerdetails" rows="2" required></textarea><br><br>
+            
+                <label for="phoneno"><b>Phone No</b></label><br>
+                <input type="tel" id="phoneno" name="phoneno" required><br><br>
+            
+                <label for="location"><b>Location</b></label><br>
+                <input type="text" id="location" name="location" required><br><br>
+
+            <input type="submit" id="submit" value="Submit">
+        </form>
+</body>
+</html>
