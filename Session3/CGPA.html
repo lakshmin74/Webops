@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Computing Page</title>
+</head>
+<body>
+    <h1> CGPA Calculator </h1>
+    <h2>Enter number of courses</h2>
+    <form>
+        Number of courses: <input type="number" id="Noofcourses" name="Noofcourses" placeholder="Number of courses" required/>
+        <button onclick="addEntries()">Submit</button><br><br>
+    </form>
+
+    <form>
+        Course credits#1: <input type="number" id="coursecredit1" name="coursecredit1">
+        Grade Points: <input type="number" id="gradepoints1" name="gradepoints1"><br><br>
+
+        Course credits#2: <input type="number" id="coursecredit2" name="coursecredit2">
+        Grade Points: <input type="number" id="gradepoints2" name="gradepoints2"><br><br>
+
+        Course credits#3: <input type="number" id="coursecredit3" name="coursecredit3">
+        Grade Points: <input type="number" id="gradepoints3" name="gradepoints3"><br><br>
+
+        Course credits#4: <input type="number" id="coursecredit4" name="coursecredit4">
+        Grade Points: <input type="number" id="gradepoints4" name="gradepoints4"><br><br>
+
+        <button onclick="calculateCgpa()">Calculate CGPA</button><br><br>
+
+    </form>
+
+       
+    <script>
+        function calculateCgpa() {
+            
+            var coursecredits1 = document.getElementById("coursecredit1").value;
+            var gradepoint1 = document.getElementById("gradepoints1").value;
+
+            var coursecredits2 = document.getElementById("coursecredit2").value;
+            var gradepoint2= document.getElementById("gradepoints2").value;
+
+            var coursecredits3 = document.getElementById("coursecredit3").value;
+            var gradepoint3 = document.getElementById("gradepoints3").value;
+
+            var coursecredits4 = document.getElementById("coursecredit4").value;
+            var gradepoint4 = document.getElementById("gradepoints4").value;
+
+            let weightedsum = ((coursecredits1*gradepoint1)+(coursecredits2*gradepoint2) + (coursecredits3*gradepoint3) + (coursecredits4*gradepoint4));
+            alert(weightedsum);
+        
+            let coursecreditsum = (coursecredits1+coursecredits2+coursecredits3+coursecredits4);
+            let cgpa = (weightedsum/coursecreditsum);
+
+            document.write("CGPA is");
+            document.write(weightedsum/coursecreditsum);
+        }
+                       
+        
+    </script>
+       
+</body>
+</html>
