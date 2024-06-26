@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Number Game</title>
+    <h1>Guess the number</h1>
+</head>
+<body>
+    <form>
+        Enter Number: <input type="number" id="input" name="input" placeholder="Guess the no" required/>
+        <button onclick="findNo()">Submit</button><br><br>
+    </form>
+
+    <script>
+        function findNo() {
+            var inp = document.getElementById("input").value;
+            if (inp > 1203) {
+                alert("Greater than Target no");
+                return;
+            }
+            else if (inp < 1203) {
+                alert("Less than Target no");
+                return;
+            }
+            else (inp == 1203) 
+                alert("Yes, You are right...The number is 1203...Congrats!!!");
+            
+            
+        }
+    </script>
+</body>
