@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compute CGPA</title>
+<link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+
+    <h2>Compute CGPA</h2>  
+
+    <label for="numSubjects"><b>Number of Subjects:</b></label><br><br>
+    <input type="number" id="numSubjects" min="1" max="10">
+    <button onclick="generateFields()">Submit</button><br><br>
+
+    <script>
+        function generateFields() {
+            var numSubjects = parseInt(document.getElementById("numSubjects").value);
+            var subjectFields = document.getElementById("subjectFields");
+    
+            // Clear any existing fields
+            subjectFields.innerHTML = '';
+    
+            for (var i = 0; i < numSubjects; i++) {
+                var fieldset = document.createElement("fieldset");
+                var legend = document.createElement("legend");
+                legend.textContent = "Subject " + (i + 1);
+                fieldset.appendChild(legend);
+        
+                var labelCredit = document.createElement("label");
+                labelCredit.textContent = "Course Credits:";
+                var inputCredit = document.createElement("input");
+                inputCredit.type = "number";
+                inputCredit.classList.add("credit");
+                inputCredit.required = true;
+                labelCredit.appendChild(inputCredit);
+                fieldset.appendChild(labelCredit);
+        
+                var labelGrade = document.createElement("label");
+                labelGrade.textContent = "Grade Points:";
+                var inputGrade = document.createElement("input");
+                inputGrade.type = "number";
+                inputGrade.step = "0.01";
+                inputGrade.classList.add("grade");
+                inputGrade.required = true;
+                labelGrade.appendChild(inputGrade);
+                fieldset.appendChild(labelGrade);
+        
+                subjectFields.appendChild(fieldset);
+            }
+        }
+
+        function calculateCGPA() {
+            var credits = document.getElementsByClassName("credit");
+            var grades = document.getElementsByClassName("grade");
+            var totalCredits = 0;
+            var totalGradePoints = 0;
+  
+            // Calculate total credits and total grade points
+            for (var i = 0; i < credits.length; i++) {
+                var credit = parseFloat(credits[i].value);
+                var grade = parseFloat(grades[i].value);
+                
+                if (!isNaN(credit) && !isNaN(grade)) {
+                totalCredits += credit;
+                totalGradePoints += credit * grade;
+                }
+            }
+            
+            // Calculate CGPA
+            var cgpa = totalGradePoints / totalCredits;
+            
+            // Display result
+            var resultElement = document.getElementById("result");
+            resultElement.textContent = "Your CGPA is: " + cgpa.toFixed(2);
+        }
+    </script>
+
+    <div id="subjectFields">
+        <!-- Fields will be dynamically added here -->
+    </div>
+    <br>
+    <button onclick="calculateCGPA()"><b>Calculate CGPA</b></button><br><br>
+    
+    <div id="result"></div>
+
+</body>
+</html>
