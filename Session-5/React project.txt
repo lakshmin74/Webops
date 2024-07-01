@@ -1,0 +1,3 @@
+Unable to complete this task as the project environment got disturbed and not clear on setting up the project.
+npm command not recognized even though the location is given in the PATH.
+It takes time to learn react as well as express and also need clear guidelines and trouble shooting tips.
